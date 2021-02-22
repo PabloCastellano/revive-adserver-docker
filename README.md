@@ -1,26 +1,23 @@
-[![Docker Build Status](https://img.shields.io/docker/build/krish512/revive.svg?style=for-the-badge)](https://hub.docker.com/r/krish512/revive/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/krish512/revive.svg?style=for-the-badge)](https://hub.docker.com/r/krish512/revive/)
-[![MicroBadger Size](https://img.shields.io/microbadger/image-size/krish512/revive.svg?style=for-the-badge)](https://hub.docker.com/r/krish512/revive/)
+[![Docker Build Status](https://img.shields.io/docker/build/pablocastellano/revive-adserver.svg?style=for-the-badge)](https://hub.docker.com/r/pablocastellano/revive-adserver/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/pablocastellano/revive-adserver.svg?style=for-the-badge)](https://hub.docker.com/r/pablocastellano/revive-adserver/)
+[![MicroBadger Size](https://img.shields.io/microbadger/image-size/pablocastellano/revive-adserver.svg?style=for-the-badge)](https://hub.docker.com/r/pablocastellano/revive-adserver/)
 
-# README #
+# revive-adserver-docker
 
-Revive AdServer docker image based on Alpine Linux with nginx, php7-fpm and Revive adserver 4.2.1
+[Revive Adserver](https://www.revive-adserver.net/) docker image based on Alpine Linux, nginx and php7-fpm.
 
-### What is this repository for? ###
+Current version: 5.1.1
 
-* Quick summary:
-    Revive AdServer docker image based on Alpine Linux with nginx, php7-fpm and Revive Ad Server 4.2.1
+### Run
 
-* Version 4.2.1
-* [Repository Link](https://github.com/krish512/ReviveDockerImage.git)
+Using `docker`:
 
+```
+docker pull pablocastellano/revive-adserver
+```
 
-### How do I get set up? ###
+Using `docker-compose`:
 
-* Usage:
-    "docker pull krish512/revive"
-
-### Who do I talk to? ###
-
-* Repo owner or admin:
-    `Krishna Modi <krish512@hotmail.com>`
+```
+docker-compose up --build
+```

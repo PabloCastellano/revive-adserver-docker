@@ -1,0 +1,28 @@
+---
+version: "3.4"
+
+services:
+  revive-adserver:
+    image: pablocastellano/revive-adserver
+    build:
+      context: .
+      args:
+        - REVIVE_VERSION=${REVIVE_VERSION}
+    ports:
+      - "8080:80"
+    volumes:
+      - revive-data:/var/www/html/var
+
+  mysql:
+    image: mariadb:10.4
+    environment:
+      - MYSQL_ROOT_PASSWORD=revive
+      - MYSQL_DATABASE=revive
+      - MYSQL_USER=revive
+      - MYSQL_PASSWORD=revive
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
+  revive-data:

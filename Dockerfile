@@ -1,16 +1,15 @@
-FROM alpine
-MAINTAINER krish512 <krish512@hotmail.com>
+FROM nginx:alpine
+MAINTAINER Pablo Castellano <pablo@anche.no>
+ARG REVIVE_VERSION
 
 WORKDIR /var/www/html
 
 RUN apk --update upgrade && apk update && apk add curl ca-certificates && update-ca-certificates --fresh && apk add openssl
 
-RUN apk --update add \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+RUN apk add \
         nginx \
         gzip \
-        php7 \
+        php7-fpm \
         php7-dom \
         php7-ctype \
         php7-curl \
@@ -35,7 +34,7 @@ RUN apk --update add \
         php7-zip \
     && rm -rf /var/cache/apk/*
 
-RUN wget -qO- https://download.revive-adserver.com/revive-adserver-4.2.1.tar.gz | tar xz --strip 1 \
+RUN wget -qO- https://download.revive-adserver.com/revive-adserver-${REVIVE_VERSION}.tar.gz | tar xz --strip 1 \
     && chown -R nobody:nobody . \
     && rm -rf /var/cache/apk/*
 
