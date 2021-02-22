@@ -3,7 +3,7 @@ version: "3.4"
 
 services:
   revive-adserver:
-    image: pablocastellano/revive-adserver
+    image: pablocastellano/revive-adserver:${REVIVE_VERSION}
     build:
       context: .
       args:

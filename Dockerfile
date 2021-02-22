@@ -4,7 +4,7 @@ ARG REVIVE_VERSION
 
 WORKDIR /var/www/html
 
-RUN apk --update upgrade && apk update && apk add curl ca-certificates && update-ca-certificates --fresh && apk add openssl
+RUN apk add curl ca-certificates && update-ca-certificates --fresh && apk add openssl
 
 RUN apk add \
         nginx \
