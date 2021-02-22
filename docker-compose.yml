@@ -12,6 +12,7 @@ services:
       - "8080:80"
     volumes:
       - revive-data:/var/www/html/var
+      - revive-www:/var/www/html/www
 
   mysql:
     image: mariadb:10.4
@@ -26,3 +27,4 @@ services:
 volumes:
   mysql-data:
   revive-data:
+  revive-www:

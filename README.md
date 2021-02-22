@@ -8,7 +8,7 @@
 
 Current version: 5.1.1
 
-### Run
+## Run
 
 Using `docker`:
 
@@ -20,4 +20,10 @@ Using `docker-compose`:
 
 ```
 docker-compose up --build
+```
+
+## Debug
+
+```
+docker-compose exec revive-adserver sh
 ```
