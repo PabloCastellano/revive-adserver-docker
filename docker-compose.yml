@@ -9,7 +9,7 @@ services:
       args:
         - REVIVE_VERSION=${REVIVE_VERSION}
     ports:
-      - "8080:80"
+      - "8077:80"
     volumes:
       - revive-data:/var/www/html/var
       - revive-www:/var/www/html/www
