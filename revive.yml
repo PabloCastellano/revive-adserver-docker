@@ -1,0 +1,19 @@
+---
+version: "3.4"
+
+services:
+  revive-adserver:
+    image: pablocastellano/revive-adserver:${REVIVE_VERSION}
+    build:
+      context: .
+      args:
+        - REVIVE_VERSION=${REVIVE_VERSION}
+    ports:
+      - "8077:80"
+    volumes:
+      - revive-data:/var/www/html/var
+      - revive-www:/var/www/html/www
+
+volumes:
+  revive-data:
+  revive-www:

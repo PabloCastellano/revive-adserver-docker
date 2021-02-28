@@ -2,8 +2,6 @@ FROM nginx:alpine
 MAINTAINER Pablo Castellano <pablo@anche.no>
 ARG REVIVE_VERSION
 
-WORKDIR /var/www/html
-
 RUN apk add curl ca-certificates && update-ca-certificates --fresh && apk add openssl
 
 RUN apk add \
@@ -35,8 +33,11 @@ RUN apk add \
         php7-zip \
     && rm -rf /var/cache/apk/*
 
-RUN wget -qO- https://download.revive-adserver.com/revive-adserver-${REVIVE_VERSION}.tar.gz | tar xz --strip 1 \
-    && chown -R nobody:nobody . \
+WORKDIR /var/www/html
+
+ADD files/revive-adserver-${REVIVE_VERSION}/ ./
+
+RUN chown -R nobody:nobody . \
     && rm -rf /var/cache/apk/*
 
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
